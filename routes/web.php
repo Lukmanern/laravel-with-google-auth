@@ -16,7 +16,7 @@ use Laravel\Socialite\Facades\Socialite;
 |
 */
 
-// Google
+// Google Auth
 Route::get('/login/google', 
       [LoginController::class, 'redirectToGoogle']
 )->name('login.google');

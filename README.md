@@ -27,3 +27,34 @@ php artisan serve -q
 ```sh
 composer require laravel/socialite
 ```
+
+-   add vars in .env
+
+```sh
+# Google Auth
+GOOGLE_CLIENT_ID="ALWAYS_SECRET"
+GOOGLE_CLIENT_SECRET="ALWAYS_SECRET"
+```
+
+-   add in web/route.php and add the method
+
+```sh
+// Google Auth
+Route::get('/login/google',
+      [LoginController::class, 'redirectToGoogle']
+)->name('login.google');
+
+Route::get('/login/google/callback',
+      [LoginController::class, 'handleGoogleCallback']
+)->name('callback.google');
+```
+
+-   add array in config/services.php
+
+```sh
+      'google' => [
+            'client_id' => env('GOOGLE_CLIENT_ID'),
+            'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+            'redirect' => 'http://localhost:8000/login/google/callback',
+      ],
+```
