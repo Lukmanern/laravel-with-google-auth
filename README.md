@@ -4,6 +4,8 @@
 composer require laravel/ui --dev
 ```
 
+-   add ui auth
+
 ```sh
 php artisan ui bootstrap --auth
 ```
@@ -19,10 +21,10 @@ npm run dev
 -   run project and check /login url
 
 ```sh
-php artisan serve -q
+php artisan serve
 ```
 
--   https://laravel.com/docs/9.x/socialite#routing
+-   [Laravel:Socialite Doc](https://laravel.com/docs/8.x/socialite#routing)
 
 ```sh
 composer require laravel/socialite
