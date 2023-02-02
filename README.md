@@ -60,3 +60,25 @@ Route::get('/login/google/callback',
       'redirect' => 'http://localhost:8000/login/google/callback',
 ],
 ```
+
+-   add 2 colomns in user migration file and edit (password tobe nullable)
+
+```sh
+// add
+$table->string('provider_id')->nullable();
+$table->string('avatar')->nullable();
+// edit
+$table->string('password')->nullable();
+```
+
+-   run migration
+
+```sh
+php artisan migrate
+```
+
+-   or
+
+```sh
+php artisan migrate:fresh
+```
