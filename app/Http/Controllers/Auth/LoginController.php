@@ -71,24 +71,4 @@ class LoginController extends Controller
 
             return $this->registerOrLogin($user);
       }
-
-      public function redirectToFacebook()
-      {
-            return Socialite::driver('facebook')->redirect();
-      }
-
-      public function handleFacebookCallback()
-      {
-            $user = Socialite::driver('facebook')->user();
-      }
-
-      public function redirectToGithub()
-      {
-            return Socialite::driver('github')->redirect();
-      }
-
-      public function handleGithubCallback()
-      {
-            $user = Socialite::driver('github')->user();
-      }
 }
